@@ -8,10 +8,10 @@ contract ScottCoinSale {
   uint256 public rate;
   uint256 public totalRaised;
 
-  constructor(address _token) public {
-    rate = 1000000;
+  constructor(address _token, address _wallet, uint256 _rate) public {
     token = TransferableToken(_token);
-    wallet = msg.sender;
+    wallet = _wallet;
+    rate = _rate;
   }
 
   function() external payable {
